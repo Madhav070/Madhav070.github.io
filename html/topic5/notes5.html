@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="common.css">
+    <title>Arrays</title>
+</head>
+<body>
+    <div>
+    <h1>Arrays</h1>
+    <p>An array is a collection of data items of the same data type. And it is also known as a subscript variable. <br></p>
+    <ul>
+        <li>Items are stored at contiguous memory locations in arrays.</li><br>
+        <li>It can also store the collection of derived data types such as pointers, structures, etc.</li><br>
+        <li>The C Language places no limits on the number of dimensions in an array. This means we can create arrays of any number of dimensions. It could be a 2D array or a 3D array or more.</li><br>
+
+    </ul>
+    <h2>Dimensions of Array </h2>
+    <ul>
+        <li><h4>One Dimensional Array</h4></li>
+        <li><h4>Two Dimensional Array</h4></li>
+    </ul>
+    <h2>Advantages of Array</h2>
+    <ul>
+        <li>It is used to represent multiple data items of the same type by using only a single name.</li><br>
+        <li>Accessing any random item at any random position in a given array is very fast in an array.</li><br>
+        <li>There is no case of memory shortage or overflow in the case of arrays since the size is fixed and elements are stored in contiguous memory locations.</li><br>
+    </ul>
+    <h2>Properties of Array</h2>
+    <ul>
+        <li>An array stores data be it of any data type in contiguous memory locations in RAM.</li><br>
+        <li>Each element of an array is of the same size i.e. their data types are the same so the memory consumed by each is also the same.</li><br>
+        <li>Any element of the array with a given index can be accessed very quickly by using its address which can be calculated using the base address and the index number.</li><br>
+        <li>Index Number – It is the special type of number which allows us to access variables of arrays.  Index number provides a method to access each element of an array in a program.</li><br>
+
+    </ul>
+    <h2>Array Operations</h2>
+    <h3>Defining an array</h3>
+    <ol>
+        <li>Without specifying the size of the array <br>
+            int arr[] = {1, 2, 3}; <br>
+            Here, we can leave the square brackets empty, although the array cannot be left empty in this case. It must have elements in it.
+        </li><br>
+        <li>With specifying the size of the array <br>
+            int arr[3]; <br>
+            arr[0] = 1, arr[1] = 2, arr[2] = 3; <br>
+            Here, we can specify the size of the array in its definition itself. We can then put array elements later as well.
+        </li><br>
+    </ol>    
+    <h2>Accessing an array element</h2>
+    <p>An element in an array can easily be accessed through its index number. This must be remembered that the index number starts from 0 and not one. <br>
+        Example: <br>
+        #include < stdio.h > <br>
+        
+        int main() <br>
+        
+        { <br>
+        
+            int arr[] = {1, 5, 7, 2}; <br>
+        
+            printf("%d ", arr[2]); //printing element on index 2 <br>
+        
+        } <br>
+        Output: <br>
+        7 <br>
+    </p>
+    <h2>Changing an array element</h2>
+    <p>An element in an array can be overwritten using its index number. <br>
+        Example: <br>
+        #include < stdio.h > <br>
+        
+        int main() <br>
+        
+        {<br>
+        
+            int arr[] = {1, 5, 7, 2}; <br>
+        
+            arr[2] = 8; //changing the element on index 2 <br>
+        
+            printf("%d ", arr[2]); //printing element on index 2 <br>
+        
+        } <br>
+        Output: <br>
+        8 <br>
+    </p>
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="common.css">
+    <title>Iteration,Loop control statements</title>
+</head>
+<body>
+    <div>
+    <h1>C Loops</h1>
+    <p>In programming, we often have to perform an action, again and again, with little or no variations in the details each time they are executed. This need is met by a mechanism known as a loop. <br>
+        The versatility of the computer lies in its ability to perform the set of instructions repeatedly. This involves repeating some code in the program, either a specified number of times or until a particular condition is satisfied. Loop-controlled instructions are used to perform this repetitive operation efficiently ensuring the program doesn’t look redundant at the same time due to the repetitions. <br> <br>
+         
+        Following are the three types of loops in C programming.
+    </p> 
+    <ul>
+        <li>For loop</li>
+        <li>While loop</li>
+        <li>Do while loop</li>
+    </ul> <br>
+    <h2>Types of Loops</h2><br>
+    <h3>Entry Controlled Loops</h3>
+    <p>In entry controlled loops, the test condition is evaluated before entering the loop body. The for Loop and the while Loop are examples of entry-controlled loops.</p>
+    <h3>Exit Controlled Loops</h3>
+    <p>In exit-controlled loops, the test condition is tested at the end of the loop. Regardless of whether the test condition is true or false, the loop body will execute at least once. The do-while loop is an example of an exit-controlled loop.</p> <br><br>
+    <h2>For Loop</h2>
+    <p>A for loop is a repetition control structure that allows us to efficiently write a loop that will execute a specific number of times. The for loop working is as follows: <br>
+        <ul>
+            <li>The initialization statement is executed only once; in this statement, we initialize a variable to some value.</li><br>
+            <li>In the second step, the test expression is evaluated. Suppose the test expression is evaluated to be true. In that case, the for loop keeps running, and the test expression is re-evaluated, but if the test expression is evaluated to false, then the for loop terminates</li><br>
+            <li>The loop keeps executing until the test expression is false. When the test expression is false, then the loop terminates. </li><br>
+        </ul>
+        <p>
+        Example of a for loop : <br><br>
+        #include < stdio.h > <br>
+ 
+            int main() <br>
+            { <br>
+                int num = 10; <br>
+                int i; <br>
+                for (i = 0; i < num; i++) <br>
+                { <br>
+                    printf("%d ", i); <br>
+                } <br>
+                return 0; <br>
+            } <br><br><br>
+            Output : <br><br>
+            0 1 2 3 4 5 6 7 8 9
+
+    </p>
+    <h3>Why for loops if we already have while loops?</h3>
+    <p>It is clear to a developer exactly how many times the loop will execute. So, if the developer has to dry run the code, it will become easier. 
+    </p>
+    <br><br>
+    <h2>While Loop</h2> 
+    <p>While loop is called a pre-tested loop. The while loop allows code to be executed multiple times, depending upon a boolean condition that is given as a test expression. While introducing for loops, we saw that the number of iterations is known, whereas while loops are used in situations where we do not know the exact number of iterations of the loop. The while loop execution is terminated based on the test condition which evaluates to either true or false.</p>
+    <p>The syntax for using a while loop,<br><br>
+        while (condition test) <br>
+        { <br>
+            // Set of statements <br>
+        }</p> <br>
+    <p>The body of a while loop can contain a single statement or a block of statements. The test condition may be any expression that should evaluate as either true or false. The loop iterates while the test condition evaluates to true.When the condition becomes false, the program control passes to the line immediately following the loop, which means, it terminates.</p>
+    <p>One such example to demonstrate how a while loop works is, <br> <br>
+        #include < stdio.h > <br><br>
+         
+        int main() <br>
+        { <br>
+            int i = 0; <br>
+            while (i <= 5) <br>
+            { <br>
+                printf("%d ", i); <br>
+                i++;<br>
+            } <br>
+            return 0; <br>
+        }</p><br>
+    <p>Output : <br><br>0 1 2 3 4 5</p>
+    <br><br>
+    <p>Properties of while loop : </p>
+    <ul>
+        <li>A conditional expression written in the brackets of while is used to check the condition. The Set of statements defined inside the while loop will execute until the given condition returns false.</li> <br>
+        <li>The condition will return 0 if it is true. The condition will be false if it returns any nonzero number.</li><br>
+        <li>In the while loop, we cannot execute the loop until we do not specify the condition expression.</li><br>
+        <li>It is possible to execute a while loop without any statements. This will give no error.</li><br>
+        <li>We can have multiple conditional expressions in a while loop.</li><br>
+        <li>Braces are optional if the loop body contains only one statement.</li><br>
+    </ul>
+    <br><br>
+    <h2>Do-While Loop</h2>
+    <p>A do-while loop is a little different from a normal while loop. A do-while loop, unlike what happens in a while loop, executes the statements inside the body of the loop before checking the test condition. <br><br>
+        So even if a condition is false in the first place, the do-while loop would have already run once. A do-while loop is very much similar to a while loop, except for the fact that it is guaranteed to execute the body at least once. <br><br>
+        Unlike for and while loops, which test the loop condition first, then execute the code written inside the body of the loop, the do-while loop checks its condition at the end of the loop. <br><br>
+        Following is the syntax of the do-while loop :<br><br>
+        do <br>
+        {<br>
+        statements;<br>
+        } while (test condition);<br><br>
+        If the test condition returns true, the flow of control jumps back up to the do part, and the set of statements in the loop executes again. This process repeats until the given test condition becomes false.
+    </p> <br>
+    <h3>Working of a Do-while loop</h3>
+    <ol>
+        <li>First, the body of the do-while loop is executed once. Only then, the test condition is evaluated.
+        </li><br>
+        <li>If the test condition returns true, the set of instructions inside the body of the loop is executed again, and the test condition is evaluated.
+        </li><br>
+        <li>The same process goes on until the test condition becomes false.
+        </li><br>
+        <li>If the test condition returns false, then the loop terminates.
+        </li>
+    </ol><br>
+    <p>Example of working of a Do-while loop : <br><br>
+        #include < stdio.h ><br>
+ 
+        int main() <br>
+        {<br>
+            int i = 5;<br>
+             
+             do <br>
+            { <br>
+                printf("%d ", i); <br>
+                i++; <br>
+            } while (i < 5); <br>
+             
+            return 0; <br>
+        } <br><br>
+        Output : <br><br>5 <br>
+
+            
+    </p>
+    <h3>Q.Difference between while and do while loop ?</h3>
+    <p>A While loop is executed every time the given test condition returns true, whereas, a do-while loop is executed for the first time irrespective of the test condition being true or false because the test condition is checked only after executing the loop for the first time.
+    </p>
+    <br><br>
+    <h2>Break Statement</h2>
+    <ul>
+        <li>Break statement is used to break the loop or switch case statements execution and brings the control to the next block of code after that particular loop or switch case it was used in.
+        </li> <br>
+        <li>Break statements are used to bring the program control out of the loop it was encountered in.
+        </li> <br>
+        <li>The break statement is used inside loops or switch statements in C Language.
+        </li> <br>
+        <p>One such example to demonstrate how a break statement works is, <br><br>
+            #include < stdio.h > <br>
+            int main() <br>
+            {<br>
+            int i = 0;<br>
+            while (1) <br>
+            {<br>
+                if (i > 5) <br>
+                {<br>
+                    break; <br>
+                } <br>
+                printf("%d ", i); <br>
+                i++; <br>
+            } <br>
+ 
+            return 0; <br>
+            } <br><br><br>
+            Output : <br><br>
+            0 1 2 3 4 5  <br><br>
+            Here, when i became 6, the break statement got executed and the program came out of the while loop. <br>
+        </p>
+    </ul>
+
+    <br><br>
+    <h2>Continue Statement</h2> <br>
+    <ul>
+        <li>The continue statement is used inside loops in C Language. When a continue statement is encountered inside the loop, the control jumps to the beginning of the loop for the next iteration, skipping the execution of statements inside the body of the loop after the continue statement.
+        </li> <br>
+        <li>It is used to bring the control to the next iteration of the loop.
+        </li> <br>
+        <li>Typically, the continue statement skips some code inside the loop and lets the program move on with the next iteration.
+        </li> <br>
+        <li>It is mainly used for a condition so that we can skip some lines of code for a particular condition.
+        </li> <br>
+        <li>It forces the next iteration to follow in the loop unlike a break statement, which terminates the loop itself the moment it is encountered. 
+        </li>
+
+    </ul> <br>
+    <p>Example of continue statement : <br><br>
+        #include < stdio.h > <br>
+ 
+            int main() <br>
+            { <br>
+                for (int i = 0; i <= 10; i++) <br>
+                { <br>
+                    if (i < 6) <br>
+                    { <br>
+                        continue; <br>
+                    } <br>
+                    printf("%d ", i); <br>
+                } <br>
+                return 0; <br>
+            } <br> <br><br>
+            Output : <br><br>
+            6 7 8 9 10 <br>     
+    </p>
+
+</div>
+</body>
+</html>

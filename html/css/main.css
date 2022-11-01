@@ -1,0 +1,63 @@
+.div1{
+    height: 550px;
+    background-color: #D1F2EB;
+    text-align: center;
+    padding-top: 100px;
+    font-family: verdana , sans-serif;
+    margin: 25px;
+    border: 5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: blueviolet;
+}
+
+
+.compile{
+    position: absolute;
+    
+}
+.debug{
+    position: absolute;
+    top: 100px;
+    left: 200px;
+}
+.bcs{
+    position: absolute;
+    top: 300;
+    right: 200px;
+}
+.contents{
+    font-size: larger;
+    height: 500px;
+    background-color: #D1F2EB;
+    text-align: center;
+    padding-top: 100px; 
+    font-family: verdana , sans-serif;
+    margin: 25px;
+    border: 5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: blueviolet;
+
+}
+.list{
+    text-align: initial;
+    position: absolute;
+    left: 500px;
+}
+.bulb{
+    position: relative;
+    left:250px;
+    bottom: 170px;
+}
+.contents1{
+    position: relative;
+    right: 250px;
+    top: 120px;
+}
+h1{
+    color: rgb(99, 17, 176);
+}
+p{
+    color: rgb(137, 43, 226);
+}

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="common.css">
+    <title>Memory Managment</title>
+</head>
+<body>
+    <div>
+        <h1>Memory Managment</h1>
+        <h2>Types of Variables</h2>
+        <ul>
+            <li><h3>Local Variables</h3>
+                <p>Local variables are variables that are declared inside a function or a block of code. These variables cannot be accessed outside the function they are declared in. Local variables can be accessed only by statements that are inside that function or block of code which means the scope of these variables will be within the function only.
+                </p><br>
+            </li><br>
+            <li><h3>Global Variables</h3>
+                <p>Global variables are variables that are defined outside of all the functions. Global variables hold their values, and we can access them inside any of the functions defined in the program. When we define global variables, the system automatically initializes them. <br>
+                    If cases where we have both the local and global variables with the same name declared, the local variable takes preference.
+                </p><br>
+            </li><br>
+            <li><h3>Static Variables</h3>
+                <p>A static variable is a variable that retains its value even after the program exits the scope it was declared in. Static variables retain their value and are not initialized again in the new scope. The memory assigned to a static variable stays until the end of the program is reached, whereas a normal variable is destroyed when a function it was declared in gets exited. They can be defined inside or outside the function. Static variables are local to the block. The default value of a static variable is zero. The keyword static is used to declare a static variable. <br>
+                    Syntax: <br>
+                    static datatype variable_name = variable_value;
+                </p><br>
+            </li><br>
+        </ul>
+        <h3>Difference between static local and static global variables</h3>
+        <h4>Static global variables :</h4>
+        <p>Any variable declared outside a function with a static keyword is known as a static global variable. This variable will be accessible through any of the methods in the program.
+        </p><br><br>
+        <h4>Static local variables</h4>
+        <p>Any variable declared inside of a function with a static keyword is known as a static local variable. The scope of a static local variable will be the same as that of a local variable, but its memory will be available throughout the execution of the program.
+        </p><br><br>
+        <h3>Properties of Static variables</h3>
+        <ul>
+            <li>A static variable will retain the value even after the program exits the scope it was declared in.
+            </li><br>
+            <li>Memory allocated to a static variable is available throughout the program execution.
+            </li><br>
+            <li>If we do not initialize a static variable, then the default value will be 0.
+            </li><br>
+        </ul>
+        <h2>Memory Layout</h2>
+        <h3>What is Dynamic Memory ?</h3>
+        <p>Any allocation of memory space during the runtime of the program is called dynamic memory allocation. The concept of dynamic memory allocation is used to reduce the wastage of memory, and it is the optimal way of memory allocation. 
+        </p><br>
+        <h3>Memory allocation in C </h3>
+        <ol>
+            <li><em>Code :</em>
+                <p>Code composes of all the text segments of our program.Everything we do as a programmer to build a program fall into this category.</p>
+            </li>
+            <br>
+            <li><em>Variables :</em>
+                <p>Declarations of both global and static variables come into this segment. Global variables can be used anywhere in the program, while static has its limitations inside the function. 
+                </p>
+            </li><br>
+            <li><em>Stack :</em>
+                <p>A stack is a data structure. Initially, the stack looks like an empty bucket in which the last entry to be inserted will be the first one to get out. It is also known as a LIFO data structure i.e., last in first out. <br>
+                    Suppose the program starts executing a function named A, then this function A gets pushed into the stack. Now, if function A calls another function B during its execution, then function B will also get pushed into the stack, and the program will start executing B. Now, if B calls another function C, then the program will push C into the stack and will start with its execution. Now, after the program gets done with the execution of C, the program will pop C from the stack as it was the last one to get pushed and start executing B. When B gets executed completely, it will get popped and A will start executing further until the stack becomes empty. </p>
+            </li><br>
+            <li><em>Heap :</em>
+                <p>Heap is a tree-based data structure. It is used when we allocate memory dynamically. To use the heap data structure, we have to create a pointer in our main function that will point to some memory block in a heap. The disadvantage of using a heap is that the memory assigned to a pointer will not get freed automatically when the pointer gets overwritten. 
+                </p>
+            </li><br>
+        </ol><br>
+        <h3>Differences between static & dynamic memory</h3>
+        <table>
+            <tr>
+                <th>Static</th>
+                <th>Dynamic</th>
+            </tr>
+            <tr>
+                <td>Allocation of memory before execution.</td>
+                <td>Allocation of memory at run time.</td>
+            </tr>
+            <tr>
+                <td>Non reusable memory</td>
+                <td>Reusable memory</td>
+            </tr>
+            <tr>
+                <td>Less optimal way</td>
+                <td>More optimal way</td>
+            </tr>
+        </table>
+        <h2>Memory Allocation</h2>
+        <ol>
+            <li><em>malloc() :</em>
+            <p>malloc stands for memory allocation. This inbuilt function requests memory from the heap and returns a pointer to the memory. The pointer is of the void type and we can typecast it to any other data type of our choice. <br>
+                All the values at the allocation time are initialized to garbage values. The function expects the memory space along with the size we want in bytes at the time it is used. <br>
+                Syntax: <br>
+                    ptr = (ptr - type *)malloc(size_in_bytes) <br>
+                <br>
+                 
+                Example: <br>
+                    int *ptr; <br>
+                    ptr = (int *)malloc(5 *sizeof(int));
+            </p>
+            </li><br>
+            <li>
+                <em>calloc() :</em>
+                <p>calloc stands for contiguous memory allocation. Similar to malloc, this function also requests memory from the heap and returns a pointer to the memory. Differences lie in the way we have to call it. <br>
+                    First, we have to send as parameters the number of blocks needed along with their size in bytes. Second, in calloc(), the values at the allocation time are initialized to 0 instead of garbage value unlike what happens in malloc(). <br>
+                    Syntax: <br>
+                        ptr = (ptr - type *)calloc(n, size_in_bytes) <br>
+                    <br>
+                     
+                    Example: <br>
+                        int *ptr; <br>
+                        ptr = (int *)calloc(5, sizeof(int)); <br>
+                    
+                </p>
+            </li><br>
+            <li>
+                <em>realloc() :</em>
+                <p>realloc stands for reallocation of memory. It is used in cases where the dynamic memory allocated previously is insufficient and there is a need of increasing the already allocated memory to store more data. <br>
+                    We also pass the previously declared memory address, and the new size of the memory in bytes while calling the function.  <br>
+                    Syntax: <br>
+                        ptr = (ptr - type *)realloc(ptr, new_size_in_bytes) <br>
+                    <br>
+                     
+                    Example: <br>
+                        ptr = (int *)realloc(ptr,10* sizeof(int)); <br>
+                    
+                </p>
+            </li><br>
+            <li>
+                <em>free() :</em>
+                <p>While discussing the disadvantages of dynamic memory allocation, it was mentioned that there is no automatic deletion of dynamically allocated memory when the pointer gets overwritten. So, to manually do it, we use the free() function to free up the allocated memory space. Therefore, free() is used to free up the space occupied by the allocated memory. <br>
+                    We just have to pass the pointer as a parameter inside the function and the address being pointed gets freed. <br>
+                    Syntax: <br>
+                      free(ptr); <br>
+                    
+                </p>
+            </li>
+        </ol>
+        </div>
+    </body>
+</html>

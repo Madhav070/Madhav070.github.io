@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="common.css">
+    <title>NOTES</title>
+</head>
+<body>
+    <div>
+    <h1>Chalo shuru karein !</h1>
+    <br>
+    <br>
+    <h2>Basic Structure & Syntax !</h2>
+    <ul>
+        <li>Pre-processor commands</li>
+        <li>Functions</li>
+        <li>Variables</li>
+        <li>Statements</li>
+        <li>Expressions</li>
+        <li>Comments</li>
+    </ul>
+    <h3>Pre-Processor Commands</h3>
+    <p>Pre-processor commands are commands which tell our program that before its execution, it must include the file name mentioned in it because we are using some of the commands or codes from this file.</p>
+    <p>They add funcitionalities to a program.</p>
+    <p>One example could be--></p>
+    <p>We include math.h to be able to use some special functions like power and absolut. <br> #include < filename.h> is how we include them into our programs.</p>
+    <h3>Syntax</h3>
+    <p>An example below shows how a basic C program is written and how the structure we learned is followed. </p>
+    <p>#include < stdio.h > <br>int main() <br>{<br>printf("Hello World");<br>return0;<br>}</p>
+    <ul>
+        <li>Here, the first line is a pre-processor command including a header file stdio.h.</li>
+        <li>C ignores empty lines and spaces.</li>
+        <li>here is a main() function then, which should always be there.</li>
+        <li>It has a print statement and then a return statement.</li>
+        <li>Every statement in C must end with a semi-colon. </li>
+        <li>Make sure the return statement and the return_type of the function are the same.</li>
+    </ul>
+    <p>A C program is made up of different tokens combined.These tokens include:</p>
+    <ul>
+        <li>Keywords</li>
+        <li>Identifiers</li>
+        <li>Constants</li>
+        <li>String literal</li>
+        <li>Sybmols</li>
+    </ul>
+    <h3>Keywords</h3>
+    <p>Keywords are reserved words that can not be used elsewhere in the program for naming a variable or a function. They have a specific function or task and they are solely used for that. Their functionalities are pre-defined.</p>
+    <p>One such example of a keyword could be return which is used to build return statements for functions. Other examples are auto, if, default, etc.</p>
+    <h3>Identifiers</h3>
+    <p>Identifiers are names given to variables or functions to differentiate them from one another. Their definitions are solely based on our choice but there are a few rules that we have to follow while naming identifiers. One such rule says that the name can not contain special symbols such as @, -, *, <, etc.</p>
+    <p>C is a case-sensitive language so an identifier containing a capital letter and another one containing a small letter in the same place will be different. For example, the three words: Code, code, and cOde can be used as three different identifiers.</p>
+    <h3>Constants</h3>
+    <p>Constants are very similar to a variable and they can also be of any data type. The only difference between a constant and a variable is that a constant’s value never changes.</p>
+    <h3>String Literal</h3>
+    <p>String literals or string constants are a sequence of characters enclosed in double quotation marks. For example,  “This is a string literal!” is a string literal. C method printf() utilizes the same to format the output.</p>
+    <h3>Symbols</h3>
+    <p>Symbols are special characters reserved to perform certain actions. Using them lets the compiler know what specific tasks should be performed on the given data. Several examples of symbols are arithmetical operators such as +, *, or bitwise operators such as ^, &.</p>
+    <h2>C comments</h2>
+    <p>Comments can be used to insert any informative piece which a programmer does not wish to be executed. It could be either to explain a piece of code or to make it more readable. In addition, it can be used to prevent the execution of alternative code when the process of debugging is done.
+        <br>
+        Comments can be singled-lined or multi-lined.
+    </p>
+    <h3>Single Line Comments</h3>
+    <ul>
+        <li>Single-line comments start with two forward slashes (//).</li>
+        <li>Any information after the slashes // lying on the same line would be ignored (will not be executed).</li>
+
+    </ul>
+    <p>An example of how we use a single-line comment --></p>
+    <p>#include < stdio.h ><br>int main() <br>{ <br>//This is a single line comment. <br> printf("Hello World"); <br>return 0; <br>}</p>
+    <h3>Multi-line Comments</h3>
+    <ul>
+        <li>A multi-line comment starts with /* and ends with */.</li>
+        <li>Any information between /* and */ will be ignored by the compiler.</li>
+    </ul>
+    <p>An example of how we use a multi-line comment</p>
+    <p>#include < stdio.h > <br>
+ 
+        int main() <br>
+        { <br>
+            /* This is a <br>
+            multi-line <br>
+            comment */ <br>
+            printf("Hello World!"); <br>
+            return 0; <br>
+        }</p>
+        <h2>C Variable</h2>
+        <p>Variables are containers for storing data values.</p>
+        <p>In C, there are different types of variables. <br>For example</p>
+        <ul> 
+            <li>an integer variable defined with the keyword int stores integers (whole numbers), without decimals, such as 91 or -13.</li>
+            <li>a floating point variable defined with keyword float stores floating point numbers, with decimals, such as 99.98 or -1.23.</li>
+            <li>a character variable defined with the keyword char stores single characters, such as 'A' or 'z'. Char values are bound to be surrounded by single quotes.</li>
+
+        </ul>
+        <h3>Declraration</h3>
+        <p>We cannot declare a variable without specifying its data type. The data type of a variable depends on what we want to store in the variable and how much space we want it to hold. The syntax for declaring a variable is simple:</p>
+        <p>data_type  variable_name; <br>
+            OR <br>
+            
+            data_type  variable_name = value;
+        </p>
+        <h3>Naming a Variable</h3>
+        <p>There is no limit to what we can call a variable. Yet there are specific rules we must follow while naming a variable: <br>
+        <ul>
+            <li>A variable name can only contain alphabets, digits, and underscores(_).</li>
+            <li>A variable cannot start with a digit.</li>
+            <li>A variable cannot include any white space in its name.</li>
+            <li>The name should not be a reserved keyword or any special character.</li>
+        </ul>    
+            
+            A variable, as its name is defined, can be altered, or its value can be changed, but the same is not true for its type. If a variable is of integer type, then it will only store an integer value through a program. We cannot assign a character type value to an integer variable. We can not even store a decimal value into an integer variable.</p>
+        
+        </p>
+</div>
+</body>
+</html>

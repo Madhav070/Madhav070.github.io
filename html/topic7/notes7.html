@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="common.css">
+    <title>What are Functions?</title>
+</head>
+<body>
+    <div>
+        <h1>What are Functions ?</h1>
+        <p>A Function can be defined as a piece of code written under a specific name that performs a certain task on being called.</p>
+        <ul>
+            <h3>Advantages of Functions</h3>
+            <li>Reduced Line of Code : The use of functions allows us to avoid re-writing the same logic or code over and over again.</li><br>
+            <li>Fragmentation of the program : With the help of functions, we can divide the work among the programmers.</li><br>
+            <li>Easy debugging : We can easily debug or can find bugs in any program using functions.</li><br>
+            <li>Decreases complexibility : They make code readable and less complex.</li><br>
+        </ul><br><br>
+        <ol>
+            <h3>Aspects of a Function</h3> <br>
+            <li>Declaration : This is where a function is declared to tell the compiler about its existence.</li><br>
+            <li>Definition : A function is defined to get some task executed. (It means when we define a function, we write the whole code of that function and this is where the actual implementation of the function is done.)</li><br>
+            <li>Call : This is where a function is called in order to be used.</li><br>
+        </ol><br><br>
+        <ul>
+            <h3>Type of Functions</h3>
+            <li>Library functions : Library functions are pre-defined functions in C Language. These are the functions that are included in C header files prior to any other part of the code in order to be used.
+                E.g. printf(), scanf(), etc.</li><br>
+            <li>User-defined functions : User-defined functions are functions created by the programmer for the reduction of the complexity of a program. Rather, these are functions that the user creates as per the requirements of a program.
+                E.g. Any function created by the programmer.</li><br>
+        </ul><br><br>
+        <h2>Function Parameters</h2>
+        <p>A parameter or an argument of a function is the information we wish to pass to the function when it is called to be executed. Parameters act as variables inside the function. <br>
+            Parameters are specified after the function name, inside the parentheses. You can add as many parameters as you want, just separate them with a comma. <br>
+            Here’s the basic syntax of a function <br>
+            return_type functionName(parameter1, parameter2) { <br>
+              // body of the function <br>
+            }</p> <br><br>
+        <h3>What is return type ?</h3>
+        <p>Return type specifies the data type the function should return after its execution. It could also be a void where the function is required to return nothing.</p><br><br>
+        <h2>Different ways to define a function </h2>
+        <ol>
+            <li><em>Without arguments and without return value</em>
+                In this function we don’t have to give any value to the function (argument/parameters) and even don’t have to take any value from it in return. <br>
+                One example of such functions could be, <br>
+                #include < stdio.h > <br><br>
+                void func() <br>
+                { <br>
+                    printf("This function doesn't return anything."); <br>
+                } <br>
+                 <br>
+                int main() <br>
+                { <br>
+                    func(); <br>
+                } <br><br>
+                Output: <br>
+                 
+                This function doesn’t return anything.
+            </li>
+            <li><em>Without arguments and with the return value.</em>
+                In these types of functions, we don’t have to give any value or argument to the function but in return, we get something from it i.e. some value. <br>
+                One example of such functions could be, <br>
+                #include < stdio.h > <br>
+                 <br>
+                int func() <br>
+                { <br>
+                    int a, b; <br>
+                    scanf("%d", &a); <br>
+                    scanf("%d", &b); <br>
+                    return a + b; <br>
+                } <br>
+                 <br>
+                int main() <br>
+                { <br>
+                    int ans = func(); <br>
+                    printf("%d", ans); <br>
+                } <br>
+                <br>
+                Input: <br>
+                5 <br>
+                6 <br>
+                Output: <br>
+                11
+            </li><br>
+            <li><em>With arguments and without a return value.</em> <br>
+                In this type of function, we give arguments or parameters to the function but we don’t get any value from it in return. <br>
+                One example of such functions could be, <br>
+                #include < stdio.h > <br>
+                 <br>
+                void func(int a, int b) <br>
+                { <br>
+                    printf("%d", a * b); <br>
+                } <br>
+                 <br>
+                int main() <br>
+                { <br>
+                    func(2, 3); <br>
+                } <br>
+                <br>
+                Output: <br>
+                6 <br>
+            </li><br>
+            <li><em> With arguments and with the return value</em> <br>
+                In these functions, we give arguments to a function and in return, we also get some value from it. <br>
+               One example of such functions could be, <br>
+               #include < stdio.h > <br>
+                 <br>
+               int func(int a, int b) <br>
+               { <br>
+                   return a + b; <br>
+               } <br>
+                 <br>
+               int main() <br>
+               { <br>
+                   int ans = func(2, 3); <br>
+                   printf("%d", ans); <br>
+               } <br>
+               <br>
+               Output: <br>
+               5
+            </li><br>
+        </ol>
+        <h2>Function Declaration</h2>
+        <ul>
+            <p>A function consist of two parts:</p><br>
+            <li>Declaration, where we specify the function's name, its return type, and required parameters (if any).</li><br>
+            <li>Definition, which is nothing but the body of the function (code to be executed)</li><br>
+        </ul>
+        <h3>Basic structure of a function : </h3>
+        <p>return_type functionName() { // declaration <br>
+            // body of the function (definition) br
+          } <br>
+          <br>
+          For code optimization and readability, it is often recommended to separate the declaration and the definition of the function. <br>
+          And this is the reason why you will often see C programs that have function declarations above the main() function, and function definitions below the main() function. This will make the code better organized and easier to read. <br>
+           <br>
+          This is how it is done, <br>
+          #include < stdio.h > <br>
+           <br>
+          // Function declaration <br>
+          void func(); <br>
+           <br>
+          int main() <br>
+          { <br>
+              func(); // calling the function <br>
+              return 0; <br>
+          } <br>
+           <br>
+          // Function definition <br>
+          void func() <br>
+          { <br>
+              printf("This is the definition part."); <br>
+          } <br>
+          <br>
+          Output: <br>
+          This is the definition part.
+        </p><br><br>
+        <h2>Recursive Functions</h2>
+        <p>Recursive functions or recursion is a process when a function calls a copy of itself to work on smaller problems. <br>
+            Recursion is the process in which a function calls itself directly or indirectly. And the corresponding function or function which calls itself is called a recursive function. <br>
+
+        </p><br>
+        <ul>
+        
+        <li>Any function which calls itself is called a recursive function.</li><br>
+        <li>This makes the life of a programmer easy by dividing a complex problem into simple or easier problems.</li><br>
+        <li>A termination condition is imposed on such functions to stop them from executing copies of themselves forever or infinitely. This is also known as the base condition.</li><br>
+        <li>Any problem which can be solved recursively can also be solved iteratively.</li><br>
+        <li>Recursions are used to solve tougher problems like Tower Of Hanoi, Fibonacci Series, Factorial finding, etc., and many more, where solving by intuition becomes tough.</li><br>
+        </ul><br><br>
+        <h3>What is base condition</h3><br>
+        <p>The case in which the function doesn’t recur is called the base case. <br>
+            For example, when we try to find the factorial of a number using recursion, the case when our number becomes smaller than 1 is the base case.
+        </p><br><br>
+        <h3>Recursive Case </h3>
+        <p>The instances where the function keeps calling itself to perform a subtask which is generally the same problem with the problem size reduced to many smaller parts, is called the recursive case. <br>
+            <br>
+            Example of recursion, <br>
+            #include < stdio.h > <br>
+             <br>
+            int factorial(int num) <br>
+            { <br>
+                if (num > 0) <br>
+                { <br>
+                    return num * factorial(num - 1); <br>
+                } <br>
+                else <br>
+                { <br>
+                    return 0; <br>
+                } <br>
+            } <br>
+              <br>
+            int main() <br>
+            { <br>
+                int ans = factorial(10); <br>
+                printf("%d", ans); <br>
+                return 0; <br>
+            } <br>
+            <br>
+            Output: <br>
+            3628800</p>
+
+
+
+
+
+    </div>
+</body>
+</html>

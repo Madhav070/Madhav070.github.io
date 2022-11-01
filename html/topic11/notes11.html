@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="common.css">
+    <title>Memory Managment</title>
+</head>
+<body>
+    <div>
+        <h1>File Handling</h1>
+        <p>A large program deployed for heavy applications cannot function without files, since we can get input from them as well as print output from them very easily. We can also save a lot of program space by accessing the file's data only when needed, making the program more efficient and faster.</p><br>
+        <h3>Why do we need handle files in C</h3>
+        <ul>
+            <li>Files are used to store content hence reducing the actual program's size.
+            </li><br>
+            <li>We can read or access data from files.
+            </li><br>
+            <li>The data in files remain stored even after the program's execution is terminated.
+            </li><br>
+        </ul>
+        <p>Files are stored in non-volatile memory. To understand what a non-volatile memory is and how it is better in terms of storing things for longer, we have to see the differences between volatile and non-volatile memory.
+        </p><br>
+        <table>
+            <tr>
+                <th>VOLATILE MEMORY</th>
+                <TH>NON-VOLATILE MEMORY</TH>
+            </tr>
+            <tr>
+                <td>The data can only remain in the system while the computer’s power is on.
+                </td>
+                <td>The data remains in the program even after the computer’s power is off. It gets retrieved after the system gets on again.
+                </td>
+            </tr>
+            <tr>
+                <td>Volatile memory can only hold information when there is a constant power supply.
+                </td>
+                <td>Non volatile memory can also hold information even in case of non constant power supply.
+                </td>
+            </tr>
+            <tr>
+                <td>Data gets held for a short period in case of volatile memory.
+                </td>
+                <td>Data gets held for a longer term in case of non-volatile memory.
+                </td>
+            </tr>
+            <tr>
+                <td>RAM is an example
+                </td>
+                <td>Hard Disk is an example.
+                </td>
+            </tr>
+        </table>
+        <br><br>
+        <h3>What are the different types of files ?</h3>
+        <p>There are 2 types of files :</p>
+        <ul>
+            <li><em>Binary Files</em>
+                <p>Binary files store data in 01 i.e., binary format. They are not directly readable. In order to read binary files, you will need software or an application. An example of binary file is a .bin file.
+                </p>
+            </li>
+            <li><em>Text Files</em>
+                <p>Text files store data in a simple text format. They are directly readable and no external software is required to access them. An example of a text file is a .txt file.
+                </p>
+            </li>
+        </ul>
+        <h2>Operations on File Handling</h2>
+        <ul>
+            <li><em>Creating a File:</em>
+                <p>We can create a file using C language, in any directory, without even leaving our compiler. We can select the name or type we want our file to have, along with its location.
+                </p>
+            </li><br>
+            <li><em>Opening a File:</em>
+                <p>We can open an existing file and create a new file and open it using our program. We can perform different operations on a file after it has been opened.
+                </p>
+            </li><br>
+            <li><em>Closing a File:</em>
+                <p>When we are done with the file, meaning that we have performed whatever we want to perform on our file, we can close the file using the close function.
+                </p>
+            </li><br>
+            <li><em>Read/Write to a File:</em>
+                <p>After opening a file, we can access its contents and read, write, or update them.
+                </p>
+            </li><br>
+        </ul>
+        <h2>File Input/Output</h2>
+        <p>The first and foremost thing we should know when working with files in C is that we have to declare a pointer of the file type to work with files. The syntax for declaring a pointer of file type is
+            FILE *ptr;
+        </p><br>
+        <h3>Modes</h3>
+        <ul>
+            <li>r: opens a file for reading.
+            </li><br>
+            <li>w: opens a file for writing. It can also create a new file.
+            </li><br>
+            <li>a: opens a file for appending.
+            </li><br>
+            <li>r+: opens a file for both reading and writing but cannot create a new file.
+            </li><br>
+            <li>w+: opens a file for both reading and writing.
+            </li><br>
+        </ul>
+        <h3>Closing a File:</h3>
+        <p>When working with C, closing open files is an essential step. A programmer often makes a mistake of not closing an open file. This becomes crucila because files do not automatically get closed after a program uses them. The closing has to be done manually. 
+        </p><br>
+        <p>To close a file, we have to use the fclose() function. We only need to pass the pointer as a parameter to the function. <br>
+            Syntax: <br>
+            fclose(ptr);
+        </p><br>
+        <h3>Reading a file</h3>
+        <p>Reading from a file is as easy as reading any other stuff as an input in C. We just use a file version of scanf(). In order to read from a file, we use the function fscanf(). Like scanf() used to get input from the keyboard, it gets its input from a file and prints it onto the screen. 
+            We have to send the file pointer as an argument for the program to be able to read it. The file has to be opened in r mode, i.e., read mode, to work properly for fscanf(). 
+            Example:
+            #include < stdio.h >
+             
+            int main()
+            {
+                FILE *ptr;
+                ptr = fopen("example.txt", "r");
+                char str[128];
+                fscanf(ptr, "%s", str);
+                printf("%s", str);
+            }
+            Copy
+             
+            The file example.txt had “Welcome_To_JustCodeIt!” as its content, hence the output:
+             
+            Welcome_To_JustCodeIt!
+        </p><br>
+        <h3>Writing to a File</h3>
+        <p>Writing to a file is as easy as printing any other stuff in C. We just use a file version of printf(). In order to write to a file, we use the function fprintf(). For printing text inside the file, we use fprintf() as we did for printing text on the screen using printf(). We have to send the file pointer as an argument for the program to be able to print it into the file. The file has to be opened in w mode, i.e. write mode, to be able to write in the file properly. <br>
+            fprintf() takes the pointer to the file as one of the arguments along with the text to be written. <br>
+            Example: <br>
+            #include < stdio.h > <br>
+             <br>
+            int main() <br>
+            { <br>
+                FILE *ptr; <br>
+                ptr = fopen("example.txt", "w"); <br>
+                char str[128] = "Hello World!"; <br>
+                fprintf(ptr, "%s", str); <br>
+            } <br>
+            <br>
+             
+            Output in the example.txt file: <br>
+            Hello World!
+        </p>
+        </div>
+    </body>
+</html>

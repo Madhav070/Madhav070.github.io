@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="common.css">
+    <title>Pointers?</title>
+</head>
+<body>
+    <div>
+        <h1>C Pointers</h1>
+        <p>When we initialise an array, we usually come to know about the,</p>
+        <ul>
+            <li>Memory block which is the space a variable gets in RAM. We can think of that space as a block.</li><br>
+            <li>Name of the memory block which is the variable’s name itself.</li><br>
+            <li>Content of that block that is the value stored in that variable</li><br>
+            <li>Address of the memory block assigned to the variable which is a unique address that allows us to access that variable.</li><br>
+        </ul><br><br>
+        <h3>What is a Pointer?</h3>
+        <ul>
+            <li>Pointer is a variable that contains the address of another variable. It means, it is a variable that points to any other variable.</li><br>
+            <li>Although this is itself a variable, this contains the address or memory address of any other variable.</li><br>
+            <li>It can be of type int, char, array, function, or even any other pointer.</li><br>
+            <li>Its size depends on the architecture.</li><br>
+            <li>Pointers in C Language can be declared using *(asterisk symbol).</li><br>
+        </ul><br>
+        <p>So, pointers are nothing but variables that store addresses of other variables, and by using pointers, we can access other variables too and can even manipulate them. </p><br><br>
+        <h3>Application of Pointers</h3>
+        <ul>
+            <li>Pointers are used to dynamically allocate or deallocate memory using methods such as malloc(), realloc(), calloc(), and free().</li><br>
+            <li>Pointers are used to point to several containers such as arrays, or structs, and also for passing addresses of containers to functions.</li><br>
+            <li>Return multiple values from a function</li><br>
+            <li>Rather than passing a copy of a container to a function, we can simply pass its pointer. This helps reduce the memory usage of the program.</li><br>
+            <li>Pointer reduces the code and improves the performance.</li><br>
+        </ul><br><br>
+        <h2>Operations on Pointers</h2>
+        <h3>Address of Operator</h3>
+        <ul>
+            <li>It is a unary operator.</li><br>
+            <li>Operand must be the name of an already defined variable.</li><br>
+            <li>& operator gives the address number of the variable.</li><br>
+            <li>& is also known as the “Referencing Operator”.</li><br>
+        </ul><br><br>
+        <p>example to demonstrate the use of the address of the operator. <br>
+            #include < stdio.h > <br>
+              <br>
+            int main() <br>
+            { <br>
+                int a = 100; <br>
+                printf("%d\n", a); <br>
+                printf("Address of variable a is %d", &a); <br>
+                return 0; <br>
+            } <br>
+            <br>
+            Output: <br>
+            100 <br>
+            Address of variable a is 6422220 <br>
+        </p><br><br>
+        <h3>Indirection Operator</h3>
+        <ul>
+            <li>* is Indirection operator.</li><br>
+            <li>It is also known as the “Dereferencing Operator”.</li><br>
+            <li>It is also a unary operator.</li><br>
+            <li>It takes an address as an argument.</li><br>
+            <li>* returns the content/container whose address is its argument. </li><br>
+        </ul><br><br>
+        <p>example to demonstrate the use of the indirection operator. <br>
+            #include < stdio.h > <br>
+              <br>
+            int main() <br>
+            { <br>
+                int a = 100; <br>
+                printf("Value of variable a stored at address %d is %d.", &a, *(&a)); <br>
+                return 0;  <br>
+            } <br>
+            <br>
+            Output: <br>
+            Value of variable a stored at address 6422220 is 100. <br>
+        </p><br><br>
+        <h2>Void Pointer</h2>
+        <p>After a brief discussion about pointers, it’s time to start with a very important type of pointers, void pointers and their functionalities. We already know that a void function has no return type i.e., functions that are not returning anything are given the type void. Now, in  the case of pointers that are given the datatype of a void, they can be typecasted into any other data type according to the necessity. And that aids that we do not have to decide on a data type for the pointer initially. <br>
+            <br>
+            Void pointers can also be addressed as general-purpose pointer variables. <br>
+             <br>
+            Let’s see a few examples that will demonstrate the functionalities of a void pointer. <br>
+             <br>
+            Example: <br>
+                int var = 1; <br>
+                void *voidPointer = &var; <br>
+            <br>
+            Here, the data type of the void pointer gets typecasted into int as we have stored the address of an integer value in it. <br>
+                char x = 'a'; <br>
+                void *voidPointer = &x; <br>
+            <br>
+            In this example, the void pointer’s data type gets typecasted to char as we have stored the address of a character value in it.  <br>
+             <br>
+            Type casting a void pointer must also remind you of the way we used to type cast a void pointer returned by the functions malloc() and calloc() while for dynamic memory allocation. There also, the heap returns a void pointer to the memory requested. And we could type cast it to any other data type and that is where a void pointer comes handy. <br>
+        </p><br><br>
+        <h3>Two important features of a Void Pointer</h3>
+        <p>Void pointers cannot be dereferenced. <br>
+            This can be demonstrated with the help of an example. <br>
+                int a = 10; <br>
+                void *voidPointer; <br>
+                voidPointer = &a; <br>
+                printf("%d", *voidPointer); <br>
+            <br>
+            Output: <br>
+            Compiler Error! <br>
+            <br>
+             <br>
+             
+            This program will throw a compile-time error, as we can not dereference a void pointer, meaning that we would compulsorily have to typecast the pointer every time it is being used. Here’s how it should be done. <br>
+                int a = 10; <br>
+                void *voidPointer; <br>
+                voidPointer = &a; <br>
+                printf("%d", *(int *)voidPointer); <br>
+            <br>
+            Output: <br>
+            10 <br>
+            <br>
+             
+            The compiler will not throw any error and will directly output the result because we are using the type along with the pointer. <br>
+             <br>
+            Pointer arithmetics cannot be used with void pointers since it is not holding any address to be able to increment or decrement its value.
+        </p><br><br>
+        <h2>Null Pointer</h2>
+        <p>A pointer that is not assigned any value or memory address but NULL is known as a NULL pointer. A NULL pointer does not point to any object, variable, or function. NULL pointers are often used to initialize a pointer variable, where we wish to represent that the pointer variable isn’t currently assigned to any valid memory address yet. <br>
+            <br>
+            This is how we define a NULL pointer, <br>
+            int *ptr = NULL; <br>
+            <br>
+             
+            A NULL pointer generally points to a NULL or 0th memory location, so in simple words, no memory is allocated to a NULL pointer. <br>
+        </p><br><br>
+        <h3>Dereferencing a Null Pointer.</h3>    
+        <p>The dereferencing behavior of a NULL pointer is very much similar to that of a void pointer. A NULL pointer itself is a kind of a VOID pointer and hence, we have to typecast it into any data type the way we do to a void pointer before dereferencing. Failing to do so results in an error at compile time.</p><br><br>
+        <h3>NULL pointer vs. Uninitialized pointer</h3>
+        <p>NULL pointers and uninitialised pointers are different, as a Null pointer does not occupy any memory location. That means, it points to nowhere but to a zeroth location. In contrast, an uninitialized pointer means that the pointer occupies a garbage value address. The garbage value address is still a real memory location and hence not a NULL value. So to be on the safe side, NULL pointers are preferred. 
+        </p><br><br>
+        <h3>NULL pointer vs. Void pointer</h3>
+        <p>NULL pointers and void pointers very much sound similar just because oif their nomenclatures, but they are very different as a NULL pointer is a pointer with a NULL value address, and a void pointer is a pointer of void data type. Their significances are contrasting. <br>
+            <br>
+            An example of a NULL pointer is as follows, <br>
+                int *ptr = NULL; <br>
+            <br><br>
+             
+            Here, an integer pointer variable is declared with a value NULL, which means it is not pointing to any memory location. <br>
+             <br>
+            An example of a VOID pointer is as follows, <br>
+                void *ptr; <br>
+            <br>
+             
+            Now, this is a void pointer. This pointer will typecast itself to any other data type as per the datatype of the value stored in it. </p>
+        <h3>Advantages of a Null Pointer</h3>
+        <ul>
+            <li>We can initialize a pointer variable without allocating any specific memory location to it.
+            </li><br>
+            <li>We can use it to check whether a pointer is legitimate or not. We can check that by making the pointer a NULL pointer, after which it cannot be dereferenced. 
+            </li><br>
+            <li>A NULL pointer is used for comparison with other pointers to check whether that other pointer itself is pointing to some memory address or not. 
+            </li><br>
+            <li>We use it for error handling in the case of C programming.
+            </li><br>
+            <li>We can pass a NULL pointer at places where we do not want to pass a pointer with a valid memory address.
+            </li><br>
+        </ul>
+        <h2>Dangling Pointer</h2>
+        <p>Dangling pointers are pointers that are pointing to a memory location that has been already freed or deleted. <br>
+            Dangling pointers often come into existence during object destruction. It happens when an object with an incoming reference is deleted or de-allocated, without modifying the value of the pointer. The pointer still points to the memory location of the deallocated memory. <br>
+            The system may itself reallocate the previously deleted memory and several unpredicted results may occur as the memory may now contain different data.
+        </p><br><br>
+        <h3>Dangling pointers are caused by the following factors :</h3>
+        <h4>De-allocating or free variable memory</h4>
+        <p>De-allocating or free variable memory <br>
+            When memory is deallocated, the pointer keeps pointing to freed space. An example to demonstrate how that happens is: <br>
+            #include < stdio.h > <br>
+            int main() <br>
+            { <br>
+                int a = 80; <br>
+                int *ptr = (int *)malloc(sizeof(int)); <br>
+                ptr = &a; <br>
+                free(ptr); <br>
+                return 0; <br>
+            } <br>
+            <br>
+            The above code demonstrates how a variable pointer *ptr and an integer variable a containing a value 80 was created. The pointer variable *ptr is created with the help of the malloc() function. As we know that malloc() function returns the void, so we use int * for type conversion to convert void pointer into int pointer. <br>
+        </p><br>
+        <h4>Function Call</h4>
+        <p>Now, we will see how the pointer becomes dangling with the function call. <br>
+            #include < stdio.h > <br>
+            int *myvalue() <br>
+            { <br>
+                int a = 10; <br>
+                return &a; <br>
+            } <br>
+            br
+            int main() <br>
+            { <br>
+                int *ptr = myvalue(); <br>
+                printf("%d", *ptr); <br>
+                return 0; <br>
+            } <br>
+            <br>
+            Output: <br>
+            Segmentation Fault! <br>
+            <br>
+             
+            In the above code, First, we create the main() function in which we have declared ptr pointer, which contains the return value of the func() function. When the function func() is called, the program control moves to the context of the int *func(). Then, the function func() returns the address of the integer variable a. <br>
+            This is where the program control comes back to the main() function and the integer variable a becomes unavaialbale for the rest of the program execution. And the pointer ptr becomes dangling as it points to a memory location that has been freed or deleted from the stack. Hence, the program results in a segmentation fault. <br>
+            Had this code been updated, and the integer variable been declared globally which is static and as we know, any static variable stores in global memory, the output would have been 10.
+        </p><br><br>
+        <h3>How to avoid Dangling pointers ?</h3>
+        <p>The dangling pointer introduces nasty bugs into our programs, and these bugs often result in security holes. By merely initializing the pointer value to the NULL, these errors following the creation of dangling pointer can be avoided. After that, the pointer will no longer point to the freed memory location. While the reason behind assigning the NULL value to the pointer was to have the pointer not to point to any random or previously assigned memory location.
+        </p><br><br>
+        <h2>Wild Pointers</h2>
+        <p>Uninitialized pointers are known as wild pointers because they point to some arbitrary memory location while they are not assigned to any other memory location. This may even cause a program to crash or behave unpredictably at times. <br>
+            For example: <br>
+                int *ptr; <br>
+            <br>
+            Here, a pointer named ptr is created but was not given any value. This makes the pointer ptr, a wild pointer. <br>
+             <br>
+            Declaring a pointer and not initialising it has its own disadvantages. One such disadvantage is that it will store any garbage value in it. A random location in memory will be held in it arbitrarily. This random allocation often becomes tough for a programmer to debug causing a lot of problems in the execution of the program. <br>
+        </p><br><br>
+        <h3>Avoid porblems due to Wild Pointers</h3>
+        <p>Dereferencing a wild pointer becomes problematic at times, and to avoid the them, we often prefer to convert a void pointer to a NULL pointer. By doing so, our pointer will not point to any garbage memory location, rather it will point to a NULL location. We can convert a wild pointer to a NULL pointer by merely putting it equal to NULL. 
+        </p><br><br>
+        <h3>Dereferencing</h3>
+        <p>We cannot dereference a wild pointer as we are not sure about the data in the memory it is pointing towards. In addition to causing a lot of bugs, dereferencing a wild pointer can also cause the program to crash.
+        </p>
+        
+    </div>
+</body>
+</html>

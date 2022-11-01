@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="common.css">
+    <title>Datatypes,Operators & Input/Output.</title>
+</head>
+<body>
+    <div>
+        <h1>Datatypes,Operators & Input/Output</h1>
+        <h3>C Datatypes & Constants</h3><br>
+        <p>s explained previously, a variable in C must be a specified data type, and you must use a format specifier inside the printf function to display it.
+            <br>
+            The data type specifies the size and type of information the variable will store.
+            <br>
+            Here, we will focus on the most basic ones:
+        </p><br>
+        <table>
+            <tr>
+                <td><head> <b> Datatype </b></head></td>
+                <td><head> <b>Size</b></head></td>
+                <td><head><b>Description</b></head></td>
+                <td><head><b>Specifier</b></head></td>
+            </tr><br>
+            <tr>
+                <td>int</td>
+                <td>2 or 4 bytes</td>
+                <td>Stores whole numbers, without decimals</td>
+                <td>%d or %i</td>
+            </tr>
+            <tr>
+                <td>float</td>
+                <td>4 bytes</td>
+                <td>Stores fractional numbers,containing one or more decimals.Sufficient for storing 7 decimal digits</td>
+                <td>%f</td>
+            </tr>
+            <tr>
+                <td>double</td>
+                <td>8 bytes</td>
+                <td>Stores fractional numbers containing one or more decimals.Sufficient for storing 15 decimal digits.</td>
+                <td>%lf</td>
+            </tr>
+            <tr>
+                <td>char</td>
+                <td>1 byte</td>
+                <td>Stores a single character/letter/number or ASCII value</td>
+                <td>%c</td>
+            </tr>
+        </table><br><br>
+        <p>Here’s how we make use of the data type of a variable to print it.</p>
+        <p>#include < stdio.h > <br>
+            int main() <br>
+            { <br>  // Creating variables having different data types <br>
+                    int integer = 26; <br>
+                    float floating = 39.32; <br>
+                    char character = 'A'; <br>
+                 
+                    // Printing variables with the help of their respective format specifiers  <br>
+                    printf("%d\n", integer); <br>
+                    printf("%f\n", floating); <br>
+                    printf("%c\n", character); <br>
+            }
+        </p><br>
+        <p>Output :<br><br> 26 <br>39.320000 <br>A</p>
+        <h3>C Constants</h3><br>
+        <p>When you don't want the variables you declare to get modified intentionally or mistakenly in the later part of your program by you or others, you use the const keyword (this will declare the variable as "constant", which means unchangeable and read-only). <br><br>
+            You should always declare the variable as constant when you have values that are unlikely to change, like any mathematical constant as PI. <br>
+            When you declare a constant variable, it must be assigned a value. <br><br>
+            Here’s an example of how we declare a constant. <br><br>
+            #include < stdio.h > <br>int main() { <br>const int MOD=10000007; <br>}
+        </p>
+        <h2>C Operators</h2>
+        <p>Special symbols that are used to perform actions or operations are known as operators. They could be both unary or binary. <br>
+            For example, the symbol asterisk (*) is used to perform multiplication in C so it is an operator and it is a binary operator. <br>
+            This section covers all types of operators.  <br>
+        </p>
+        <h3>Arithmetic Operators</h3>
+        <p>Arithmetic operators are used to perform mathematical operations such as addition, subtraction, etc. A few of the simple arithmetic operators are
+        </p>
+        <table>
+            <tr>
+                <th>Operator</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>+</td>
+                <td>Addition</td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>subtraction</td>
+            </tr>
+            <tr>
+                <td>*</td>
+                <td>multiplication</td>
+            </tr>
+            <tr>
+                <td>/</td>
+                <td>Division</td>
+            </tr>
+            <tr>
+                <td>%</td>
+                <td>Modulus</td>
+            </tr>
+        </table><br><br>
+        <h3>Relational Operators</h3>
+        <p>Relational operators are used for the comparison between two or more numbers or even expressions in cases. Same as Java, C also has six relational operators and their return value is of a Boolean type that is, either True or False (1 or 0).
+        </p><br>
+        <table>
+            <tr>
+                <th>Operator</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>></td>
+                <td>Greater than</td>
+            </tr>
+            <tr>
+                <td><</td>
+                <td>Less than</td>
+            </tr>
+            <tr>
+                <td>>=</td>
+                <td>Greater than or equal to</td>
+            </tr>
+            <tr>
+                <td><=</td>
+                <td>Less than or equal to</td>
+            </tr>
+            <tr>
+                <td>==</td>
+                <td>Is equal to</td>
+            </tr>
+            <tr>
+                <td>!=</td>
+                <td>Is not equal to</td>
+            </tr>
+        </table><br>
+        <p>Let’s see their implementation in C. <br>
+            #include < stdio.h > <br>
+             <br>
+            int main() <br>
+            { <br>
+                int a = 2; <br>
+                int b = 3; <br>
+                printf("a == b = %d\n", a == b); <br>
+            } <br>
+            <br>
+            Output: <br>
+            a == b = 0 <br>
+            <br>
+            The output is 0, since a and b are not equal. <br>
+        </p>
+        <h3>Logical Operators</h3>
+        <p>There are three logical operators i.e. AND, OR, and NOT. They can be used to compare Boolean values but are mostly used to compare conditions to see whether they are satisfying or not. 
+        </p>
+        <ul>
+            <li>AND: it returns true when both operators are true or 1.
+            </li><br>
+            <li>OR: it returns true when either operator is true or 1.
+            </li><br>
+            <li>NOT: it is used to reverse the logical state of the operand.
+            </li><br>
+        </ul><br><br>
+        <table>
+            <tr>
+                <th>Operator</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>&&</td>
+                <td>AND Operator</td>
+            </tr>
+            <tr>
+                <td>!!</td>
+                <td>OR operator</td>
+            </tr>
+            <tr>
+                <td>!</td>
+                <td>NOT Operator</td>
+            </tr>
+        </table><br><br>
+        <p>Let’s see their implementation in C. <br>
+            #include < stdio.h > <br>
+             <br>
+            int main() <br>
+            { <br>
+                int a = 1; <br>
+                int b = 0; <br>
+                printf("a or b = %d\n", a || b); <br>
+            } <br>
+            <br>
+            Output: <br>
+            a or b = 1 <br>
+            <br>
+            The output is 1, since either a or b is not equal to zero. <br>
+        </p>
+        <h3>Bitwise Operator</h3>
+        <p>A bitwise operator is used to performing operations at the bit level. To obtain the results, they convert our input values into binary format and then process them using whatever operator they are being used with. 
+        </p><br>
+        <table>
+            <tr>
+                <th>Operator</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>&</td>
+                <td>Bitwise AND</td>
+            </tr>
+            <tr>
+                <td>|</td>
+                <td>Bitwise OR</td>
+            </tr>
+            <tr>
+                <td>^</td>
+                <td>Bitwise XOR</td>
+            </tr>
+            <tr>
+                <td>~</td>
+                <td>Bitwise Complement</td>
+            </tr>
+            <tr>
+                <td>>></td>
+                <td>Shift right operator</td>
+            </tr>
+            <tr>
+                <td><<</td>
+                <td>Shit left operator</td>
+            </tr>
+        </table><br><br>
+        <p>Let’s see their implementation in C. <br>
+            #include < stdio.h > <br>
+              <br>
+            int main() <br>
+            { <br>
+                int a = 2; //10 <br>
+                int b = 3; //11 <br>
+                printf("a xor b = %d\n", a ^ b); <br>
+            } <br>
+            <br>
+            Output: <br>
+            a xor b = 1 <br>
+            <br>
+            The output is 1, since a xor b is 01 in binary, which is 1 in decimal. <br>
+        </p><br>
+        <h3>Assignment Operators</h3>
+        <p>Assignment operators are used to assign values. We will use them in almost every program we develop. <br>
+            int a = 0; <br>
+            int b = 1; <br>
+            <br>
+            Equal to (=) is the assignment operator here. It is assigning 0 to a and 1 to b in the above example. <br>
+        </p>
+        <br>
+        <table>
+            <tr>
+                <th>Operator</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>=</td>
+                <td>It assigns the right side operand value to the left side operand.
+                </td>
+            </tr>
+            <tr>
+                <td>+=</td>
+                <td>It adds the right operand to the left operand and assigns the result to the left operand.
+                </td>
+            </tr>
+            <tr>
+                <td>-=</td>
+                <td>It subtracts the right operand from the left operand and assigns the result to the left operand.
+                </td>
+            </tr>
+            <tr>
+                <td>*=</td>
+                <td>It multiplies the right operand with the left operand and assigns the result to the left operand.
+                </td>
+            </tr>
+            <tr>
+                <td>/=</td>
+                <td>It divides the left operand with the right operand and assigns the result to the left operand.
+                </td>
+            </tr>
+        </table><br><br>
+        <h2>Format Specifiers & Escape Sequences</h2>
+        <p>Whenever we write a program in C, we have to use format specifiers to define the variable type in input and output and escape characters to format the output. 
+        </p><br>
+        <h3>Format Specifier</h3>
+        <p>A format specifier in C programming is used to define the type of data we are printing to the output or accepting through the input. Through this, we tell the compiler what type of variable we are using for input while using scanf() or output while using printf(). Some examples of format specifiers are %d, %c, %f, etc. <br>
+ 
+            Here is a list of almost all format specifiers.
+        </p><br>
+        <table>
+            <tr>
+                <th>Format Specifier</th>
+                <th>Type</th>
+            </tr>
+            <tr>
+                <td>%c</td>
+                <td>Used to print a character</td>
+            </tr>
+            <tr>
+                <td>%d</td>
+                <td>Used to print the signed integer</td>
+            </tr>
+            <tr>
+                <td>%f</td>
+                <td>Used to print the float values</td>
+            </tr>
+            <tr>
+                <td>%i</td>
+                <td>Used to print the unsigned integer</td>
+            </tr>
+            <tr>
+                <td>%l</td>
+                <td>Used to print the long integer</td>
+            </tr>
+            <tr>
+                <td>%lf</td>
+                <td>Used to print double values</td>
+            </tr>
+            <tr>
+                <td>%lu</td>
+                <td>Used to print unsigneed integer</td>
+            </tr>
+            <tr>
+                <td>%s</td>
+                <td>Used to print string</td>
+            </tr>
+            <tr>
+                <td>%u</td>
+                <td>Used to print the unsigned integer</td>
+            </tr>
+        </table><br><br>
+        <p>One example is shown below. <br>
+            #include < stdio.h > <br>
+              <br>
+            int main() <br>
+            { <br>
+                char c[100] = "CodeWithHarry"; <br>
+                printf("Printing a string, %s.", c); <br>
+            } <br>
+            <br>
+            Output: <br>
+            Printing a string, CodeWithHarry. <br>
+            <br>
+            
+            The %s used in the printf( ) is a format specifier. This format specifier tells printf( ) to consider it as a string and print accordingly.  <br>
+        </p><br>
+        <h3>Escape Sequences</h3>
+        <p>Many programming languages support the concept of Escape Sequences. An escape sequence is a sequence of characters that are used in formatting the output. They are not displayed on the screen while printing. Each character has its specific function. For example, \t is used to insert a tab, and \n is used to add a new line. <br>
+ 
+            Here’s the list of all escape sequences
+        </p><br>
+        <table>
+            <tr>
+                <th>Escape Sequence</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>\t</td>
+                <td>Inserts a tab space</td>
+            </tr>
+            <tr>
+                <td>\b</td>
+                <td>Inserts a backspace</td>
+            </tr>
+            <tr>
+                <td>\n</td>
+                <td>Inserts a new line</td>
+            </tr>
+            <tr>
+                <td>\r</td>
+                <td>Inserts a carriage return</td>
+            </tr>
+            <tr>
+                <td>\f</td>
+                <td>Inserts a form feed</td>
+            </tr>
+            <tr>
+                <td>\'</td>
+                <td>Inserts a single quote character</td>
+            </tr>
+            <tr>
+                <td>\"</td>
+                <td>Inserts a double quote character</td>
+            </tr>
+            <tr>
+                <td>\\</td>
+                <td>Inserts a backslash character</td>
+            </tr>
+        </table><br><br>
+        <p>One example is shown below, <br>
+            #include < stdio.h > <br>
+             <br>
+            int main() <br>
+            { <br>
+                printf("Printing inside a double quotation, \"Code With Harry\""); <br>
+            } <br>
+            <br>
+            Output: <br>
+            Printing inside a double quotation, “CodeWithHarry”. <br>
+        </p>
+        <h3>User Input/Output</h3>
+        <p>We have already learned how the printf() function is used to output values in C. Another method, which goes by the name, scanf(), is used to get user input.
+        </p><br>
+        <p>The scanf() function takes two arguments: <br>
+            the format specifier of the variable (as shown in the example below) <br>
+            the reference operator (&myNum), which stores the memory address of the variable. This is where the input data goes to. <br>
+             <br>
+            One such example demonstrates how a program takes input from the user. <br>
+            #include < stdio.h > <br>
+             <br>
+            int main() <br>
+            { <br>
+                int marks; <br>
+                char name[30]; <br>
+                printf("Enter student's name: "); <br>
+                scanf("%s", name); <br>
+                printf("Enter marks in Maths: "); <br>
+                scanf("%d", &marks); <br>
+             <br>
+                printf("Hello %s! You have scored %d in Maths!", name, marks); <br>
+                return 0; <br>
+            } <br>
+            <br>
+             
+            Input: <br>
+            Enter student's name: Rohan <br>
+            Enter marks in Maths: 98 <br>
+            <br>
+            
+            Output: <br>
+            Hello Rohan! You have scored 98 in Maths! <br>
+            <br>
+             
+            You must note that we didn’t have to specify the reference operator (&) in cases of strings if we have specified the size of the strings already. This is an exception.
+        </p>
+        
+
+
+
+
+    </div>
+    
+</body>
+</html>

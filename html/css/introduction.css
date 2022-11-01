@@ -1,0 +1,24 @@
+.introduction{
+    height: 550px;
+    background-color: #D1F2EB;
+    text-align: center;
+    padding-top: 100px;
+    font-family: verdana , sans-serif;
+    margin: 25px;
+    border: 5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: blueviolet;
+}
+.conquer{
+    position: absolute;
+    right: 100px;
+    bottom: 150px;
+}
+.sun{
+    position: absolute;
+    left: 200px;
+    top: 100px;
+
+
+}

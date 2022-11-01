@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="common.css">
+    <title>Strings Datatype</title>
+</head>
+<body>
+    <div>
+    <h1>String Datatype</h1>
+    <h2>String --></h2>
+    <p>A string is an array of characters. Data of the same type are stored in an array, for example, integers can be stored in an integer array, similarly, a group of characters can be stored in a character array. This character array is also known as strings. A string is a one-dimensional array of characters that is terminated by a null (‘\0’).
+    </p>
+    <h3>Declaration of a string</h3>
+    <p>Declaring a string is very simple, the same as declaring a one-dimensional array. It’s just that we are considering it as an array of characters. <br>
+        Below is the syntax for declaring a string. <br>
+        char string_name[string_size]; <br>         
+        In the above syntax, string_name is any name given to the string variable, and size is used to define the length of the string, i.e the number of characters that the strings will store. Keep in mind that there is an extra terminating character which is the null character (‘\0’) that is used to indicate the termination of the string.
+    </p>
+    <p>#include < stdio.h > <br>
+        int main() <br>
+        { <br>
+            // declare and initialise string <br>
+            char str[] = "JustCodeIt"; <br>
+            printf("%s", str); <br>
+            return 0; <br>
+        } <br><br><br>
+        Output: <br><br>
+        JustCodeIt
+    </p> <br><br>
+    <h2>String Functions</h2>
+    <p>We can use C's string handling library functions to handle strings. The string.h library is used to perform string operations. It provides several functions for manipulating strings. <br>
+        Following are some commonly used string handling functions: <br>
+    </p>
+    <ol>
+        <li><h3>strcat() : </h3></li>
+        <p>This function is used to concatenate the source string to the end of the target string. This function expects two parameters, first, the base address of the source string and then the base address of the target string. For example, “Hello” and “World” on concatenation would result in a string “HelloWorld”. <br>
+            Here is how we can use the strcat( ) function: <br><br>
+            #include < stdio.h > <br>
+            #include < string.h > <br>
+            int main() <br>
+            { <br>
+                char s[] = "Hello"; <br> 
+                char t[] = "World"; <br>
+                strcat(s, t); <br>
+                printf("String = %s", s); <br>
+            } <br><br>
+            Output: <br><br>
+            String  = HelloWorld
+        </p> <br><br>
+        <li><h3>strlen() : </h3></li>
+        <p>This function is used to count the number of characters present in a string. <br>
+            Here is how we can use the strlen( ) function: <br>
+            #include < stdio.h > <br>
+            #include < string.h > <br>
+            int main() <br>
+            { <br>
+                char s[] = "Hello"; <br>
+                int len = strlen(s); <br>
+                printf("Length = %d", len); <br>
+            } <br><br>
+            Output : <br><br>
+            Length  = 5
+        </p> <br><br>
+        <li><h3>strcpy() : </h3></li>
+        <p>This function is used to copy the contents of one string into the other. This function expects two parameters, first, the base address of the source string and then the base address of the target string. <br>
+            Here is how we can use the strcpy( ) function: <br>
+            #include < stdio.h > <br>
+            #include < string.h > <br>
+            int main() <br>
+            { <br>
+                char s[] = "JustCodeIt"; <br>
+                char t[50]; <br>
+                strcpy(t, s); <br>
+                printf("Source string = %s\n", s); <br>
+                printf("Target string = %s", t); <br>
+            } <br><br>
+            Output: <br> <br>
+            Source string  = JustCodeIt <br>
+            Target string  = JustCodeIt
+        </p> <br><br>
+        <li><h3>strcmp() : </h3></li>
+        <p>The strcmp() function is used to compare two strings to find out whether they are the same or different. It takes two strings as two of its parameter. It will compare two strings, character by character until there is a mismatch or the iterator reaches the end of one of the strings. <br>
+            If both of the strings are identical, strcmp( ) returns a value of zero. If they are not identical, it will return a value less than zero, considering the ASCII value of the mismatched character in the first string is less than the mismatched character in the second string. Else, it will return a value greater than 0. <br>
+            Here is how we can use the strcmp( ) function: <br>
+            #include < stdio.h > <br>
+            #include < string.h > <br>
+            int main() <br>
+            { <br>
+                char s[] = "Hello"; <br>
+                char t[] = "World"; <br>
+                int cmp = strcmp(s, t); <br>
+                printf("Comparison result = %d", cmp); <br>
+            } <br><br>
+            Output: <br>
+            Comparison result = -1
+        </p> <br><br>
+        <li><h3>strrev() : </h3></li>
+        <p>This function is used to return the reverse of the string. <br>
+            Here is how we can use the strrev( ) function: <br>
+            #include < stdio.h > <br>
+            #include < string.h > <br>
+            int main() <br>
+            { <br>
+                char s[] = "Hello"; <br>
+                printf("Reversed string = %s", strrev(s)); <br>
+            }
+            Copy
+            Output:
+            Reversed string  = olleH
+        </p>
+    </ol>
+</div>
+    
+
+    
+</body>
+</html>
